@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    android:background="@drawable/background_color"
+    android:background="@drawable/background_color_registration"
     android:layout_height="match_parent"
     tools:context="MainActivity">
 
@@ -14,14 +14,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:background="@drawable/tabpagelayer"
+        android:background="@drawable/tabpagelayer_registration"
         app:layout_constraintVertical_bias="0"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/roundshapelayout">
+        android:background="@drawable/roundshapelayout_registration">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -32,8 +32,9 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Log In"
+                android:text="Registration"
                 android:textStyle="bold"
+                android:textSize="30sp"
                 android:textColor="@android:color/black"
                 android:textAppearance="?android:textAppearanceLarge"
                 android:gravity="center" />
@@ -47,8 +48,9 @@
                 android:textColorHint="@android:color/black"
                 android:background="@drawable/edittext_background"
                 android:padding="15dp"
-                android:id="@+id/email_login"
+                android:id="@+id/email_reg"
                 android:autofillHints="" />
+
 
             <EditText
                 android:layout_width="match_parent"
@@ -60,27 +62,18 @@
                 android:textColor="@android:color/black"
                 android:textColorHint="@android:color/black"
                 android:background="@drawable/edittext_background"
-                android:id="@+id/password_login"
+                android:id="@+id/password_reg"
                 android:autofillHints="" />
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:text="Log In"
+                android:text="SignUp"
                 android:background="@drawable/edittext_background"
                 android:textColor="@android:color/black"
-                android:id="@+id/btn_login"
+                android:id="@+id/btn_reg"
                 android:textAppearance="?android:textAppearanceMedium" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:textColor="@android:color/black"
-                android:id="@+id/forget_password"
-                android:text="Forget Password?"
-                android:padding="5dp" />
 
             <LinearLayout
                 android:orientation="horizontal"
@@ -93,18 +86,18 @@
                     android:gravity="center"
                     android:textColor="@android:color/black"
                     android:id="@+id/noAccount"
-                    android:text="Don't have account?"
-                    android:layout_marginRight="95dp"
+                    android:text="Already have an account?"
+                    android:layout_marginRight="80dp"
                     android:padding="5dp" />
 
                 <TextView
-                    android:id="@+id/signup_reg"
+                    android:id="@+id/signIn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="-300dp"
                     android:gravity="center"
+                    android:layout_marginLeft="-200dp"
                     android:padding="5dp"
-                    android:text="Sign up here"
+                    android:text="Sign-In"
                     android:textColor="#3F51B5" />
 
             </LinearLayout>
@@ -116,14 +109,9 @@
         android:id="@+id/navBar2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/tabpagelayerbottom"
+        android:background="@drawable/tabpagelayerbottom_registration"
         app:layout_constraintVertical_bias="0"
         tools:ignore="SpeakableTextPresentCheck" />
 
 
 </LinearLayout>
-
-
-
-
-

@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -27,11 +28,13 @@ public class MainActivity extends AppCompatActivity {
     private TextView mForgotPass;
     private TextView mSignHere;
     private FirebaseAuth mAuth;
+    private ProgressDialog mDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        mDialog = new ProgressDialog(this);
         login();
     }
 
@@ -55,14 +58,21 @@ public class MainActivity extends AppCompatActivity {
                     mPass.setError("Invalid Password");
                     return;
                 }
+
+                mDialog.setMessage("Processing..");
+                mDialog.show();
                 mAuth.signInWithEmailAndPassword(email,pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
+                            mDialog.dismiss();
+                            Toast.makeText(getApplicationContext(),"Login Successful..",Toast.LENGTH_SHORT).show();
                             Log.d(TAG,"Login Successful");
                             startActivity(new Intent(MainActivity.this, Home.class));
                         }
                         else{
+                            mDialog.dismiss();
+                            Toast.makeText(getApplicationContext(),"Login Failed..",Toast.LENGTH_SHORT).show();
                             Log.d(TAG,"Use not Found");
                         }
                     }
@@ -81,5 +91,13 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this,passwordReset.class));
             }
         });
+    }
+
+    public ProgressDialog getmDialog() {
+        return mDialog;
+    }
+
+    public void setmDialog(ProgressDialog mDialog) {
+        this.mDialog = mDialog;
     }
 }

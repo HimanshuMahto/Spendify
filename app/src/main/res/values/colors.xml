@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="black">#F1D396</color>
-    <color name="white">#D7DD81</color>
+    <color name="white">#8BC34A</color>
+    <color name="toolbar_color">#FFB8A2E0</color>
+    <color name="nav_header">#FFB8A2E0</color>
 </resources>

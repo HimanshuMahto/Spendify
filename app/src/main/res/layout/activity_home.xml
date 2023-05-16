@@ -8,23 +8,21 @@
     android:id="@+id/drawer_layout"
     android:fitsSystemWindows="true"
     tools:openDrawer="start"
-    android:background="#F1F1F1"
-    tools:context=".Home">
+    tools:context=".HomeActivity">
 
     <include layout="@layout/appbar_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 
+
     <com.google.android.material.navigation.NavigationView
         android:layout_width="wrap_content"
-        app:itemIconTint="@color/toolbar_color"
         app:itemTextAppearance="?android:textAppearanceSmall"
-        android:layout_gravity="start"
-        android:id="@+id/naView"
+        android:layout_gravity = "start"
+        android:id="@+id/navView"
         android:fitsSystemWindows="true"
         app:menu="@menu/navmenu"
         app:headerLayout="@layout/nav_header"
         android:layout_height="match_parent"/>
-
 
 </androidx.drawerlayout.widget.DrawerLayout>
